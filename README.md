@@ -1,1 +1,1 @@
-# PicoMite-VGA-Eedition
+# PicoMite-VGA-Edition
