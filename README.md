@@ -9,5 +9,6 @@ gui.c,
 gui.h, 
 touch.c, 
 touch.h, 
+and CMakeLists.txt
 
-with the two additional files here and the cmake file
+with the two additional files here and the VGA version of the CMakeLists.txt build file
