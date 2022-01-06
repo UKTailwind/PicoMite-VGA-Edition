@@ -33,12 +33,13 @@ add_executable(PicoMiteVGA
 	Audio.c
 	CFunction.c
 	Keyboard.c
+    picojpeg.c
 )
 pico_generate_pio_header(PicoMiteVGA ${CMAKE_CURRENT_LIST_DIR}/PicoMiteVGA.pio)
 Pico_enable_stdio_usb(PicoMiteVGA 1)
 pico_enable_stdio_uart(PicoMiteVGA 0)
 pico_add_extra_outputs(PicoMiteVGA)
-target_compile_options(PicoMiteVGA PRIVATE -DPICO_STDIO_USB_ENABLE_RESET_VIA_VENDOR_INTERFACE=0 -DPICOMITEVGA=1)
+target_compile_options(PicoMiteVGA PRIVATE -DPICOMITEVGA -DPICO_STDIO_USB_ENABLE_RESET_VIA_VENDOR_INTERFACE=0 -DPICO_STACK_SIZE=0x1000)
 target_link_libraries(PicoMiteVGA
 	pico_stdlib
 	hardware_flash
