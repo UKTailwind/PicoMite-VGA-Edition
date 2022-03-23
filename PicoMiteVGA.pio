@@ -12,7 +12,7 @@
 .define HSYNC	1	; HSYNC pulse (or CSYNC pulse)
 .define VSYNC	2	; VSYNC pulse
 .define VHSYNC	3	; HSYNC and VSYNC pulse
-.define BPP	1	; number of bits per pixel
+.define BPP	4	; number of bits per pixel
 
 ; ===== [3 instructions] HSYNC pulse, N=delay in clock cycles - 3
 ; starts HSYNC at time 0

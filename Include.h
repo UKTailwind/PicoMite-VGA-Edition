@@ -97,8 +97,8 @@ INLINE void cb()
 //	GP17 ... VSYNC
 
 // QVGA port pins
-#define QVGA_GPIO_FIRST	(DISPLAY_TYPE ? 18	: 20)	// first QVGA GPIO
-#define QVGA_GPIO_NUM	(DISPLAY_TYPE ? 4	: 1)	// number of QVGA color GPIOs, without HSYNC and VSYNC
+#define QVGA_GPIO_FIRST	18	// first QVGA GPIO
+#define QVGA_GPIO_NUM	4	// number of QVGA color GPIOs, without HSYNC and VSYNC
 #define QVGA_GPIO_LAST	(QVGA_GPIO_FIRST+QVGA_GPIO_NUM-1) // last QVGA GPIO
 #define QVGA_GPIO_HSYNC	16	// QVGA HSYNC/CSYNC GPIO
 #define QVGA_GPIO_VSYNC	(QVGA_GPIO_HSYNC+1) // QVGA VSYNC GPIO
@@ -115,10 +115,14 @@ INLINE void cb()
 #define FRAMESIZE (38400) // display frame size in bytes (=38400)
 
 // 126 MHz timings
-#define QVGA_TOTAL	(DISPLAY_TYPE ? 2002	: 4004)// total clock ticks (= QVGA_HSYNC + QVGA_BP + WIDTH*QVGA_CPP[1600] + QVGA_FP)
-#define QVGA_HSYNC	(DISPLAY_TYPE ?  240	: 480)	// horizontal sync clock ticks
-#define QVGA_BP	(DISPLAY_TYPE ?  121	: 242)	// back porch clock ticks
-#define QVGA_FP	(DISPLAY_TYPE ?  41	: 82)	// front porch clock ticks
+//#define QVGA_TOTAL	(DISPLAY_TYPE==COLOURVGA ? 2002	: 4004)// total clock ticks (= QVGA_HSYNC + QVGA_BP + WIDTH*QVGA_CPP[1600] + QVGA_FP)
+//#define QVGA_HSYNC	(DISPLAY_TYPE==COLOURVGA ?  240	: 480)	// horizontal sync clock ticks
+//#define QVGA_BP	(DISPLAY_TYPE==COLOURVGA ?  121	: 242)	// back porch clock ticks
+//#define QVGA_FP	(DISPLAY_TYPE==COLOURVGA ?  41	: 82)	// front porch clock ticks
+#define QVGA_TOTAL	4004// total clock ticks (= QVGA_HSYNC + QVGA_BP + WIDTH*QVGA_CPP[1600] + QVGA_FP)
+#define QVGA_HSYNC	480	// horizontal sync clock ticks
+#define QVGA_BP	 242	// back porch clock ticks
+#define QVGA_FP	82	// front porch clock ticks
 
 // QVGA vertical timings
 #define QVGA_VTOT	525	// total scanlines (= QVGA_VSYNC + QVGA_VBACK + QVGA_VACT + QVGA_VFRONT)
