@@ -3,6 +3,7 @@ include(pico_sdk_import.cmake)
 project(test_project C CXX ASM)
 set(CMAKE_C_STANDARD 11)
 set(CMAKE_CXX_STANDARD 17)
+set(PICO_BOARD pico)
 pico_sdk_init()
 add_executable(PicoMiteVGA
 	PicoMite.c
@@ -35,11 +36,14 @@ add_executable(PicoMiteVGA
 	Keyboard.c
     picojpeg.c
 )
+pico_define_boot_stage2(slower_boot2 ${PICO_DEFAULT_BOOT_STAGE2_FILE})
+target_compile_definitions(slower_boot2 PRIVATE PICO_FLASH_SPI_CLKDIV=4)
+pico_set_boot_stage2(PicoMiteVGA slower_boot2)
 pico_generate_pio_header(PicoMiteVGA ${CMAKE_CURRENT_LIST_DIR}/PicoMiteVGA.pio)
 Pico_enable_stdio_usb(PicoMiteVGA 1)
 pico_enable_stdio_uart(PicoMiteVGA 0)
 pico_add_extra_outputs(PicoMiteVGA)
-target_compile_options(PicoMiteVGA PRIVATE -DPICOMITEVGA -DPICO_STDIO_USB_ENABLE_RESET_VIA_VENDOR_INTERFACE=0 -DPICO_CORE0_STACK_SIZE=0x2000 -DPICO_CORE1_STACK_SIZE=0x0 -DPICO_HEAP_SIZE=0x300)
+target_compile_options(PicoMiteVGA PRIVATE -DPICOMITEVGA -DPICO_STDIO_USB_ENABLE_RESET_VIA_VENDOR_INTERFACE=0 -DPICO_CORE_STACK_SIZE=0x2000 -DPICO_CORE1_STACK_SIZE=0x0 -DPICO_HEAP_SIZE=0x800)
 target_link_libraries(PicoMiteVGA
 	pico_stdlib
 	hardware_flash
