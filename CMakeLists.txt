@@ -34,7 +34,7 @@ add_executable(PicoMiteVGA
 	Audio.c
 	CFunction.c
 	Keyboard.c
-    picojpeg.c
+    picojpeg.c 
 )
 pico_define_boot_stage2(slower_boot2 ${PICO_DEFAULT_BOOT_STAGE2_FILE})
 target_compile_definitions(slower_boot2 PRIVATE PICO_FLASH_SPI_CLKDIV=4)
@@ -43,7 +43,7 @@ pico_generate_pio_header(PicoMiteVGA ${CMAKE_CURRENT_LIST_DIR}/PicoMiteVGA.pio)
 Pico_enable_stdio_usb(PicoMiteVGA 1)
 pico_enable_stdio_uart(PicoMiteVGA 0)
 pico_add_extra_outputs(PicoMiteVGA)
-target_compile_options(PicoMiteVGA PRIVATE -DPICOMITEVGA -DPICO_STDIO_USB_ENABLE_RESET_VIA_VENDOR_INTERFACE=0 -DPICO_CORE_STACK_SIZE=0x2000 -DPICO_CORE1_STACK_SIZE=0x0 -DPICO_HEAP_SIZE=0x800)
+target_compile_options(PicoMiteVGA PRIVATE -DPICOMITEVGA -DPICO_STDIO_USB_ENABLE_RESET_VIA_VENDOR_INTERFACE=0 -DPICO_STACK_SIZE=0x1000 -DPICO_CORE1_STACK_SIZE=0x0 -DPICO_HEAP_SIZE=0x400)
 target_link_libraries(PicoMiteVGA
 	pico_stdlib
 	hardware_flash
