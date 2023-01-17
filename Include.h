@@ -103,13 +103,6 @@ INLINE void cb()
 #define QVGA_GPIO_HSYNC	16	// QVGA HSYNC/CSYNC GPIO
 #define QVGA_GPIO_VSYNC	(QVGA_GPIO_HSYNC+1) // QVGA VSYNC GPIO
 
-// QVGA PIO and state machines
-#define QVGA_PIO	pio0	// QVGA PIO
-#define QVGA_SM		0	// QVGA state machine
-
-// QVGA DMA channel
-#define QVGA_DMA_CB	0	// DMA control block of base layer
-#define QVGA_DMA_PIO	1	// DMA copy data to PIO (raises IRQ0 on quiet)
 
 // QVGA display resolution
 #define FRAMESIZE (38400) // display frame size in bytes (=38400)
