@@ -45,7 +45,7 @@ pico_generate_pio_header(PicoMiteVGA ${CMAKE_CURRENT_LIST_DIR}/PicoMiteVGA.pio)
 Pico_enable_stdio_usb(PicoMiteVGA 1)
 pico_enable_stdio_uart(PicoMiteVGA 0)
 pico_add_extra_outputs(PicoMiteVGA)
-target_compile_options(PicoMiteVGA PRIVATE -DPICOMITEVGA -DPICO_FLASH_SIZE_BYTES=16777216 -DPICO_STDIO_USB_ENABLE_RESET_VIA_VENDOR_INTERFACE=0 -DPICO_STACK_SIZE=0x1000 -DPICO_CORE1_STACK_SIZE=0x0 -DPICO_HEAP_SIZE=0x200)
+target_compile_options(PicoMiteVGA PRIVATE -DPICOMITEVGA -DPICO_FLASH_SIZE_BYTES=16777216 -DPICO_STDIO_USB_ENABLE_RESET_VIA_VENDOR_INTERFACE=0 -DPICO_STACK_SIZE=0x1000 -DPICO_CORE1_STACK_SIZE=0x0 -DPICO_HEAP_SIZE=0x100)
 target_link_libraries(PicoMiteVGA
 	pico_stdlib
 	hardware_flash
