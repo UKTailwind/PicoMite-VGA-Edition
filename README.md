@@ -1,6 +1,6 @@
 # PicoMite-VGA-Edition
 
-PicoMiteVGA V5.07.07RC8
+PicoMiteVGA V5.07.07
 
 This repository contains the files needed to build the PicoMite VGA Edition
 
