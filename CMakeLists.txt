@@ -7,6 +7,7 @@ set(PICO_BOARD pico)
 pico_sdk_init()
 add_executable(PicoMiteVGA
 	PicoMite.c
+    regex.c 
 	MMBasic.c
 	Operators.c
 	Custom.c
