@@ -108,10 +108,6 @@ INLINE void cb()
 #define FRAMESIZE (38400) // display frame size in bytes (=38400)
 
 // 126 MHz timings
-//#define QVGA_TOTAL	(DISPLAY_TYPE==COLOURVGA ? 2002	: 4004)// total clock ticks (= QVGA_HSYNC + QVGA_BP + WIDTH*QVGA_CPP[1600] + QVGA_FP)
-//#define QVGA_HSYNC	(DISPLAY_TYPE==COLOURVGA ?  240	: 480)	// horizontal sync clock ticks
-//#define QVGA_BP	(DISPLAY_TYPE==COLOURVGA ?  121	: 242)	// back porch clock ticks
-//#define QVGA_FP	(DISPLAY_TYPE==COLOURVGA ?  41	: 82)	// front porch clock ticks
 #define QVGA_TOTAL	4004// total clock ticks (= QVGA_HSYNC + QVGA_BP + WIDTH*QVGA_CPP[1600] + QVGA_FP)
 #define QVGA_HSYNC	480	// horizontal sync clock ticks
 #define QVGA_BP	 242	// back porch clock ticks
