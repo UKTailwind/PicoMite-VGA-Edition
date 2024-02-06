@@ -1,5 +1,8 @@
 # PicoMite-VGA-Edition
 
+PicoMiteVGA V5.09.00b0
+ALL SOURCE FILES NOW IN THE PICOMITE REPOSITORY
+
 PicoMiteVGA V5.08.00
 This repository contains the files needed to build the PicoMite VGA Edition
 
