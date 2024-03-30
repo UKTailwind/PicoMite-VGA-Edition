@@ -1,6 +1,6 @@
 # PicoMite-VGA-Edition
 
-PicoMiteVGA V5.09.00b0
+PicoMiteVGA V5.09.00RC3
 ALL SOURCE FILES NOW IN THE PICOMITE REPOSITORY
 
 Just substitute the cmake file to build this variant
